@@ -1,0 +1,41 @@
+openapi: 3.0.2
+info:
+  description: description example.
+  license:
+    name: Apache-2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: example
+  version: 1.0.0
+servers:
+- description: server url example
+  url: "http://localhost:8080/{version}"
+  variables:
+    version:
+      default: v1
+      description: API version
+tags:
+- description: tag of service example
+  name: service
+paths:
+  /ready:
+    get:
+      description: Readiness
+      operationId: ready
+      responses:
+        "200":
+          description: OK
+      security: []
+      tags:
+      - service
+  /liveness:
+    get:
+      description: Liveness
+      operationId: liveness
+      responses:
+        "200":
+          description: OK
+      security: []
+      tags:
+      - service
+components:
+  schemas: {}
