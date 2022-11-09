@@ -30,7 +30,7 @@ func (s *ServiceApiService) Liveness(ctx context.Context) (ImplResponse, error) 
 	// Add api_service_service.go to the .openapi-generator-ignore to avoid overwriting this service implementation when updating open api generation.
 
 	//TODO: Uncomment the next line to return response Response(200, {}) or use other options such as http.Ok ...
-	return Response(200, `{ "message": "Hello Ghost" }`),nil
+	return Response(200, map[string]string{"message": "Hello Ghost"}),nil
 
 	// return Response(http.StatusNotImplemented, nil), errors.New("Liveness method not implemented")
 }
@@ -41,7 +41,7 @@ func (s *ServiceApiService) Ready(ctx context.Context) (ImplResponse, error) {
 	// Add api_service_service.go to the .openapi-generator-ignore to avoid overwriting this service implementation when updating open api generation.
 
 	//TODO: Uncomment the next line to return response Response(200, {}) or use other options such as http.Ok ...
-	return Response(200, `{ "message": "Hi Ghost" }`),nil
+	return Response(200, map[string]string{"message": "Hi Ghost"}),nil
 
 	// return Response(http.StatusNotImplemented, nil), errors.New("Ready method not implemented")
 }
